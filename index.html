@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mentality</title>
-  <script src="https://unpkg.com/vue"></script>
-  <script type="text/javascript" src="/js/main.js"></script>
-  <link rel = "stylesheet" type = "text/css" href = "/css/bootstrap.min.css" />
+  <!--<script src="https://unpkg.com/vue"></script>-->
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript">
+  function openReg() {
+    document.getElementById("reg").style.visibility = "visible";
+  }
+  </script>
+  <link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css" />
   <style>
     .navbar{
       margin-bottom:0;
@@ -48,11 +53,11 @@
       </p>
     </div>
     <div id="signup">
-      <div class="container" style="margin:auto;display:block">
-        <button v-on="click:openReg" class="btn btn-primary">Register</button>
+      <div class="container" style="margin:auto;display:block;padding-bottom:10px">
+        <button onclick="openReg()" class="btn btn-primary">Register</button>
       </div>
-      <div id="reg" class="container" style="width:25%; visibility:hidden">
-        <form>
+      <div id="reg" class="container" style="margin:auto; visibility:hidden; margin-bottom:-40px">
+        <form class="form-inline">
           <div class="form-group">
             <label>First Name</label>
             <input type="text" class="form-control">
