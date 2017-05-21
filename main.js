@@ -1,7 +1,25 @@
 var team = [];
+var score1avg = 0;
+var score2avg = 0;
+var score3avg = 0;
+var score4avg = 0;
+var scoreavg = 0;
 window.onload = function () {
   teamInit();
+  score1avg = avgScore(score1avg, score1);
+  score2avg = avgScore(score2avg, score2);
+  score3avg = avgScore(score3avg, score3);
+  score4avg = avgScore(score4avg, score4);
+  scoreavg = (score1avg + score2avg + score3avg + score4avg)/4;
 };
+
+function avgScore(score, iscore){
+  for(var x in team){
+    score += x.iscore;
+  }
+  score = score / team.length;
+  return score;
+}
 
 function student(first, last, dob, major, gradyr, sex) {
     this.firstName = first;
