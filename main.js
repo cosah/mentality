@@ -6,16 +6,42 @@ var score4avg = 0;
 var scoreavg = 0;
 window.onload = function () {
   teamInit();
-  score1avg = avgScore(score1avg, score1);
-  score2avg = avgScore(score2avg, score2);
-  score3avg = avgScore(score3avg, score3);
-  score4avg = avgScore(score4avg, score4);
-  scoreavg = (score1avg + score2avg + score3avg + score4avg)/4;
+  score1avg = avgScore1(score1avg);
+  score2avg = avgScore2(score2avg);
+  score3avg = avgScore3(score3avg);
+  score4avg = avgScore4(score4avg);
+  scoreavg = roundToTwo((score1avg + score2avg + score3avg + score4avg)/4);
+  teamScore();
 };
 
-function avgScore(score, iscore){
+function roundToTwo(num) {
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+
+function avgScore1(score){
   for(var x in team){
-    score += x.iscore;
+    score += team[x].score1;
+  }
+  score = score / team.length;
+  return score;
+}
+function avgScore2(score){
+  for(var x in team){
+    score += team[x].score2;
+  }
+  score = score / team.length;
+  return score;
+}
+function avgScore3(score){
+  for(var x in team){
+    score += team[x].score3;
+  }
+  score = score / team.length;
+  return score;
+}
+function avgScore4(score){
+  for(var x in team){
+    score += team[x].score4;
   }
   score = score / team.length;
   return score;
@@ -43,4 +69,17 @@ function teamInit(){
   team.push(new student("Bart", "Hoffman", "1996/04/19", "Chemistry", "2019", "Male"));
   team.push(new student("Henry", "Mao", "1997/08/05", "Chinese History", "2019", "Male"));
   team.push(new student("Rich", "Alpert", "1999/09/23", "Religion", "2020", "Male"));
+}
+
+function teamScore(){
+  if(scoreavg >= 4){
+    document.getElementById("score").innerHTML="<span class='label label-success' id='avgscore'>Team Mentality Score</span>";
+  }else if(scoreavg >= 3){
+    document.getElementById("score").innerHTML="<span class='label label-info' id='avgscore'>Team Mentality Score</span>";
+  }else if (scoreavg >= 2) {
+    document.getElementById("score").innerHTML='<span class="label label-warning" id="avgscore">Team Mentality Score</span>';
+  }else{
+    document.getElementById("score").innerHTML='<span class="label label-danger" id="avgscore">Team Mentality Score</span>';
+  }
+  document.getElementById("avgscore").innerHTML= "Team Mentality Score: " + scoreavg;
 }

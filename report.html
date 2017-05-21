@@ -5,70 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mentality</title>
-  <script type="text/javascript" src="/js/main.js"></script>
-
-
-<style type="text/css">
-  html,body {
-  padding:0;
-  margin:0;
-  height:100%;
-  min-height:100%;
- }
-
-.quarter{
-  width:50%;
-  height:100%;
-  float:left;
-}
-.contents{
-  height:50%;
-  width:100%;
-  
-  margin-left:80px;
-  margin-right:80px
-}
-</style>
-<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css" />
+  <script type="text/javascript" src="main.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css" />
+  <style type="text/css">
+  .navbar{
+    margin-bottom:0;
+    border-radius:0;
+  }
+  </style>
 
 </head>
 
 <body>
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default">Students</button>
+    <div class="navbar navbar-inverse" style="width:100%">
+      <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Mentality</a>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default">Resources</button>
+        <button type="button" class="btn btn-primary">Students</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default">Customization</button>
+        <button type="button" class="btn btn-primary">Resources</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default">Account Management</button>
+        <button type="button" class="btn btn-primary">Customization</button>
+      </div>
+      <div class="btn-group" role="group" style="float:right">
+        <button type="button" class="btn btn-primary">Account Management</button>
+      </div>
+      <div class="btn-group" style="float:right">
+        <button type="button" class="btn btn-primary">Alerts <span class="badge">4</span></button>
       </div>
     </div>
-
-
-
-    <div class="jumbotron" align="center" style="padding-top:20px; padding-bottom:20px">
-      <h3><span class="label label-danger">Jim Don</span></h3>
     </div>
 
-      <h5><span class="label label-danger" align="center">Team Mortality Score</span></h5>
-    
+      <h5 id="score" class="text-center"></h5>
 
 
-    <div class="contents">
-      <div id="Sleep" class="col-md-6 quarter" style="background-color:#DDD;  height:50%; float:left">Sleep</div>
-      <div id="Stress" class="col-md-6 quarter" style="background-color:#AAA; height:50%; float:right">Stress</div>
-      <div id="Relationships" class="col-md-6 quarter" style="background-color:#777; height:50%; float:left">Relationships</div>
-      <div id="Academics" class="col-md-6 quarter" style="background-color:#444; height:50%; float:right">Academics</div>
-    </div>
 
 </body>
 
 </html>
-
-
-
