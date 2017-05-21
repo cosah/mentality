@@ -10,6 +10,10 @@ function student(first, last, dob, major, gradyr, sex) {
     this.major = major;
     this.gradYear = gradyr;
     this.gender = sex;
+    this.score1 = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    this.score2 = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    this.score3 = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    this.score4 = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
 }
 
 function teamInit(){
